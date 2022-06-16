@@ -15,8 +15,15 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it(`should return "Matt's cool pokedex"`, () => {
+      expect(appController.getHello()).toBe(`Matt's cool pokedex`);
     });
   });
+
+  describe('/pokemon/:name', () => {
+    it('should return an image of the pokemon', () => {
+      expect(appController.getPokemonImage("ditto")).toBe("https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/132.png")
+    })
+  })
+   
 });
