@@ -1,0 +1,29 @@
+@media (min-width: 768px) {
+    #container {
+        background-image: url(../../frontend/pokedexwallpaper.png);
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-position: center;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        background-size: cover;
+        -o-background-size: cover;
+        max-width: 1275px;
+        min-width: 1275px;
+        max-height: 955px;
+        min-height: 955px;
+ 
+
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+
+    
+
+        /*white-space: nowrap;*/
+
+    }
+}

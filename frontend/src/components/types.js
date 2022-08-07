@@ -1,3 +1,5 @@
+import './typestyle.css';
+
 function Typecheck(props) {
     function strongAgainst(type) {
         if (type == "Electric") {

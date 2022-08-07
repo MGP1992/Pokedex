@@ -2,6 +2,7 @@ import { useState } from "react";
 import Search from "./components/Search";
 import Pkmninfo from "./components/info";
 import Typecheck from "./components/types";
+import './../src/indexstyle.css';
 
 
 function App() {

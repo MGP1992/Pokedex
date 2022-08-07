@@ -1,3 +1,5 @@
+import './infostyle.css';
+
 function Pkmninfo(props) {
     
     return (
@@ -8,7 +10,8 @@ function Pkmninfo(props) {
             <h2>Height: {props.height}</h2>
             <h2>Weight: {props.weight}</h2>
             <h2>Pokemon location: {props.location}</h2>
-            <p>{props.description}</p>
+            <p >{props.description}</p>
+
 
         </div>
 

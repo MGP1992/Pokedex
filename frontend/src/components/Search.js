@@ -1,3 +1,5 @@
+import './searchstyle.css';
+
 
 function Search(props) {
     const {pkmnName} = props;

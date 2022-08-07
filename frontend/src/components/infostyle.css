@@ -1,0 +1,14 @@
+#pkmninfo {
+    position: fixed;
+    left: 50px;
+    bottom: 335px;
+}
+
+#pkmoninfo > p {
+    color: red;
+
+}
+
+
+
+
