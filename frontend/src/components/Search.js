@@ -10,7 +10,7 @@ function Search(props) {
     }
     return (
 
-        <form onSubmit={handleSubmit}>
+        <form id="searchbar" onSubmit={handleSubmit}>
             <input id="pkmnName" name="pkmnName"placeholder="search" type="search"/>
             <input type="submit" />
         </form>
@@ -20,3 +20,5 @@ function Search(props) {
   }
   
   export default Search;
+
+  

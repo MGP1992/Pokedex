@@ -102,7 +102,7 @@ function Typecheck(props) {
 
         return (
 
-            <div>
+            <div id="types">
                 <h1>Type Matchup</h1>
                 <h2>Strong against: {strongAgainst(props.type)}</h2>
                 <h2>Weak against: {weakAgainst(props.type)}</h2>
