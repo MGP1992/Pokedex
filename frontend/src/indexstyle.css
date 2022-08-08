@@ -20,7 +20,8 @@ body {
 }
 
 #info-container {
-    height: 295px;
+    height: 22vw;
+    max-width: 1330px;
 }
 
 #content-container {

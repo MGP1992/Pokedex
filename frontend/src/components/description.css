@@ -8,6 +8,7 @@
     padding: 0 12px;
 }
 
+
 #pkmndescription > p {
     text-overflow: ellipsis;
     text-align: justify;

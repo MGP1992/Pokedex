@@ -1,14 +1,11 @@
 #pkmninfo {
-    width: 49%;
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.3vw;
-}
 
-#pkmninfo > p {
-    color: red;
-}
+        width: 49%;
+        max-width: 49%;
 
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.25vw;
 
-
+    }
 
