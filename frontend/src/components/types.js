@@ -23,7 +23,7 @@ function Typecheck(props) {
                 break;
             case "Grass":
                 addTypesToArrayByCommaSepString(strongAgainstArray, "Water, Rock, Ground");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Fre, Ice, Poison");
+                addTypesToArrayByCommaSepString(weakAgainstArray, "Fire, Ice, Poison");
                 break;
             case "Poison":
                 addTypesToArrayByCommaSepString(strongAgainstArray, "Grass");

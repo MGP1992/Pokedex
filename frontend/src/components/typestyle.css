@@ -1,2 +1,7 @@
-#types{
-}
+#types {
+    font-size: 1.25vw;
+    width: 40%;
+    max-height: 600px;    
+    display: block;
+
+    }
