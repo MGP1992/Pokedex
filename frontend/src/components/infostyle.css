@@ -1,12 +1,11 @@
 #pkmninfo {
-    position: fixed;
-    left: 50px;
-    bottom: 335px;
+    width: 49%;
+    display: inline-block;
+    vertical-align: top;
 }
 
-#pkmoninfo > p {
+#pkmninfo > p {
     color: red;
-
 }
 
 

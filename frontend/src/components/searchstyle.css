@@ -1,6 +1,5 @@
 #searchbar {
-    position: fixed;
-    bottom: 688px ;
-    left:180px
-
+    /* position: relative;
+    display: block; */
+    box-sizing: border-box;
 }

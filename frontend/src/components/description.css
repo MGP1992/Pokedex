@@ -1,0 +1,16 @@
+#pkmndescription {
+    font-size: 1.75vw;
+    margin-left: 6.5%;
+    width: 40%;
+    max-height: 600px;
+    overflow: scroll;
+    display: inline-block;
+    padding: 0 12px;
+}
+
+#pkmndescription > p {
+    text-overflow: ellipsis;
+    text-align: justify;
+    height: auto;
+    color: blue;
+}

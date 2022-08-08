@@ -1,29 +1,28 @@
-@media (min-width: 768px) {
-    #container {
-        background-image: url(../../frontend/pokedexwallpaper.png);
-        background-repeat: no-repeat;
-        background-attachment: scroll;
-        background-position: center;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        background-size: cover;
-        -o-background-size: cover;
-        max-width: 1275px;
-        min-width: 1275px;
-        max-height: 955px;
-        min-height: 955px;
- 
+#container {
+    background-image: url(../../frontend/pokedexwallpaper.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    position: absolute;
+    height: 100%;
+    min-width: 550px;
+    max-width: 1585px;
 
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    display: block;
+}
 
-    
+body {
+    margin: 0;
+    min-width: 850px;
+}
 
-        /*white-space: nowrap;*/
+#info-container {
+}
 
-    }
+#content-container {
+    position: relative;
+    margin: 22% 0 0 5%;
 }
