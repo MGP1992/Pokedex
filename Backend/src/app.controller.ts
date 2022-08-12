@@ -19,6 +19,6 @@ export class AppController {
   async getPokemonImage(@Param('name') name: string): Promise<any> {
     const pokeData = await lastValueFrom(this.httpService.get(`https://pokeapi.co/api/v2/pokemon/${name}`));
 
-    return `<img src=${pokeData.data.sprites.front_default}>`
+    return pokeData.data;
   }
 }

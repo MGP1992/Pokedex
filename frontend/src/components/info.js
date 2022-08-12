@@ -1,13 +1,14 @@
 import './infostyle.css';
 
 function PkmnInfo(props) {
+    const { infoData } = props;
     return (
         <div id="pkmninfo">
-            <h1>Pokedex entry: {props.name}</h1>
-            <h2>Type: {props.type}</h2>
-            <h2>Height: {props.height}</h2>
-            <h2>Weight: {props.weight}</h2>
-            <h2>Pokemon location: {props.location}</h2>
+            <h1>Pokedex entry: {infoData?.name}</h1>
+            <h2>Type: {infoData?.type}</h2>
+            <h2>Height: {infoData?.height}</h2>
+            <h2>Weight: {infoData?.weight}</h2>
+            <h2>Pokemon location: {infoData?.location}</h2>
         </div>         
     );
   }

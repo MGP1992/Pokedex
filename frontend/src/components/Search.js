@@ -1,12 +1,15 @@
 import './searchstyle.css';
+import axios from 'axios';
 
 
 function Search(props) {
-    const {pkmnName} = props;
-    const handleSubmit = function(event) {
-        event.preventDefault();
-        const formData = new FormData(event.currentTarget);
-        const pkmonSearch = formData.get('pkmnName');
+  const { pkmnData } = props;
+    const handleSubmit = async function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.currentTarget);
+      const pkmnSearch = formData.get('pkmnName');
+      const { data } = await axios.get(`http://localhost:3001/pokemon/${pkmnSearch}`);
+      pkmnData(data);
     }
     return (
         <form id="searchbar" onSubmit={handleSubmit}>
