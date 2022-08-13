@@ -14,7 +14,8 @@ function App() {
       type: data.types[0].type.name,
       height: data.height,
       weight: data.weight,
-      location: ''
+      location: '',
+      id: data.id,
     }
     setInfoData(temp_data);
   }
@@ -30,7 +31,7 @@ function App() {
       When Zapdos flaps its glittering wings, it releases electricity that can potentially cause thunderstorms. It produces massive crackling and snapping sounds when it flies; these are attributed to the lightning bolts it sheds when airborne. Zapdos reportedly appears only during thunderstorms and gains power when struck by lightning. It is said to live among thunderclouds, but it is rarely seen."
         />
       </div>
-      <Typecheck type="Electric" />
+      <Typecheck type={infoData?.type} />
     </div>
   );
 }

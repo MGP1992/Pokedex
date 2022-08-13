@@ -21,4 +21,6 @@ export class AppController {
 
     return pokeData.data;
   }
+
+
 }
