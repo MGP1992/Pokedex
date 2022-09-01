@@ -2,7 +2,6 @@ import './typestyle.css';
 import React from "react";
 
 function Typecheck(props) {
-    console.log(props.type)
     const strongAgainstArray = [];
     const weakAgainstArray = [];
     typeAffinity(props.type);

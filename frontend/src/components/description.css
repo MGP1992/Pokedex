@@ -1,9 +1,9 @@
 #pkmndescription {
-    font-size: 1.75vw;
+    font-size: 1.5vw;
     margin-left: 6.5%;
     width: 40%;
-    max-height: 600px;
-    overflow: scroll;
+    max-height: 580px;
+    overflow: auto;
     display: inline-block;
     padding: 0 12px;
 }

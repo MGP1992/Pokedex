@@ -9,6 +9,7 @@ function App() {
   const [infoData, setInfoData] = useState();
 
   const pull_pkmnData = (data) => {
+    console.log(data);
     const temp_data = { 
       name: data.name,
       type: data.types[0].type.name,
