@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+
 #pkmndescription {
-    font-size: 1.5vw;
+    
+    font-size: 1.4vw;
     margin-left: 6.5%;
     width: 40%;
     max-height: 580px;
@@ -13,7 +16,7 @@
     text-overflow: ellipsis;
     text-align: justify;
     height: auto;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
+    font-family: 'JetBrains Mono', monospace;
 
 }
 
@@ -22,5 +25,5 @@ img {
     display: block;
     margin: 0 auto;
     width:50%;
-
 }
+
