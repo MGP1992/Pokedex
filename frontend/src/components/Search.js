@@ -14,7 +14,7 @@ function Search(props) {
       const genOneLocations = findVersionLocation(locCall.data);
       const genOneFlavourText = findVersionFlavourText(descriptionData.data)
       const mergedData = {...data, location_area_encounters: genOneLocations, pokemon_descriptions: genOneFlavourText};
-      pkmnData(mergedData);
+      pkmnData(mergedData); //assignment
 
     }
     //pass in the array

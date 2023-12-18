@@ -13,3 +13,5 @@ function PkmnInfo(props) {
     );
   }
 export default PkmnInfo;
+
+//? if object undefined it won't throw error

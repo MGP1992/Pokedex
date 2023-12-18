@@ -3,7 +3,7 @@ import { AppService } from './app.service';
 import { HttpService } from '@nestjs/axios';
 import { last, lastValueFrom } from 'rxjs';
 
-@Controller()
+@Controller() // Define the routes realtive to app - controllers are how we define the API
 export class AppController {
   constructor(
     private readonly appService: AppService,

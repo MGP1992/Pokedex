@@ -5,7 +5,7 @@ import Typecheck from "./components/types";
 import PkmnDescription from "./components/description";
 import './../src/indexstyle.css';
 
-function App() {
+function App() { //sets up reactive variables with accessors
   const [infoData, setInfoData] = useState();
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
