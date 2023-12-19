@@ -1,95 +1,36 @@
-import './typestyle.css';
 import React from "react";
 
 function Typecheck(props) {
-    const strongAgainstArray = [];
-    const weakAgainstArray = [];
-    typeAffinity(props.type);
+  const { type } = props;
 
-    function typeAffinity(type) {
-        switch (type) {
-            case "electric":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Water, Flying");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Ground");
-                break;
-            case "water":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Fire, Rock, Ground");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Electric, Grass");
-                break;
-            case "fire":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Grass, Ice, Bug");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Water, Ground, Rock");
-                break;
-            case "grass":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Water, Rock, Ground");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Fire, Ice, Poison");
-                break;
-            case "poison":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Grass");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Flying, Bug");
-                break;
-            case "normal":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Nothing");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Fighting");
-                break;
-            case "psychic":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Fighting, Posion");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Bug, Ghost");
-                break;
-            case "ghost":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Ghost, Psychic");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Ghost");
-                break;
-            case "flying":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Grass, Bug, Fighting");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Electric, Rock, Ice");
-                break;
-            case "rock":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Fire, Flying, Bug, Ice");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Water, Grass, Fighting, Ground");
-                break;
-            case "ground":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Rock, Electric, Fire, Poison");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Water, Grass Ice");
-                break;
-            case "ice":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Grass, Ground, Flying, Dragon");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Fire, Fighting, Rock");
-                break;
-            case "bug":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Grass, Psychic");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Fire, Flying, Rock");
-                break;  
-            case "dragon":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Dragon");
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Dragon, Ice");
-                break;
-            case "fighting":
-                addTypesToArrayByCommaSepString(strongAgainstArray, "Normal, Rock, Ice") ;
-                addTypesToArrayByCommaSepString(weakAgainstArray, "Flying, Psychic" );             
-                break;
-            default:
-                break;
-        }
-    }
+  const typeMatchups = {
+    electric: { strongAgainst: ["Water", "Flying"], weakAgainst: ["Ground"] },
+    water: { strongAgainst: ["Fire", "Rock", "Ground"], weakAgainst: ["Electric", "Grass"] },
+    fire: { strongAgainst: ["Grass", "Ice", "Bug"], weakAgainst: ["Water", "Ground", "Rock"] },
+    grass: { strongAgainst: ["Water", "Rock", "Ground"], weakAgainst: ["Fire", "Ice", "Poison"] },
+    poison: { strongAgainst: ["Grass"], weakAgainst: ["Flying", "Bug"] },
+    normal: { strongAgainst: ["Nothing"], weakAgainst: ["Fighting"] },
+    psychic: { strongAgainst: ["Fighting", "Poison"], weakAgainst: ["Bug", "Ghost"] },
+    ghost: { strongAgainst: ["Ghost", "Psychic"], weakAgainst: ["Ghost"] },
+    flying: { strongAgainst: ["Grass", "Bug", "Fighting"], weakAgainst: ["Electric", "Rock", "Ice"] },
+    rock: { strongAgainst: ["Fire", "Flying", "Bug", "Ice"], weakAgainst: ["Water", "Grass", "Fighting", "Ground"] },
+    ground: { strongAgainst: ["Rock", "Electric", "Fire", "Poison"], weakAgainst: ["Water", "Grass", "Ice"] },
+    ice: { strongAgainst: ["Grass", "Ground", "Flying", "Dragon"], weakAgainst: ["Fire", "Fighting", "Rock"] },
+    bug: { strongAgainst: ["Grass", "Psychic"], weakAgainst: ["Fire", "Flying", "Rock"] },
+    dragon: { strongAgainst: ["Dragon"], weakAgainst: ["Dragon", "Ice"] },
+    fighting: { strongAgainst: ["Normal", "Rock", "Ice"], weakAgainst: ["Flying", "Psychic"] },
+    empty: { strongAgainst: [""], weakAgainst: [""] }
+  };
 
-    function addTypesToArrayByCommaSepString(array, types) {
-        const typesToAdd = types.split(',');
-        for (const type of typesToAdd) {
-            array.push(type)
-        }
-    }
+  const { strongAgainst, weakAgainst } = typeMatchups[type] || typeMatchups.empty;
 
-    
-    
-    
-        return (
-          <div id="types">
-            <h1>Type Matchup</h1>
-            <h2>Strong against: {strongAgainstArray.join(", ")}</h2>
-            <h2>Weak against: {weakAgainstArray.join(", ")}</h2>
-          </div>
-        );
-        }
-  
+  return (
+    <div id="types" className="ml-14 mt-52 text-3xl">
+      <h1>Type Matchup</h1>
+      <h2>Strong against: {strongAgainst.join(", ")}</h2>
+      <h2>Weak against: {weakAgainst.join(", ")}</h2>
+    </div>
+  );
+}
+
 export default Typecheck;

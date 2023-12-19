@@ -1,9 +1,7 @@
-import './infostyle.css';
-
 function PkmnInfo(props) {
     const { infoData } = props;
     return (
-        <div id="pkmninfo">
+        <div id="pkmninfo" className="ml-14 mt-8 text-3xl">
             <h1>Pokédex entry: {infoData?.name}</h1>
             <h2>Type: {infoData?.type}</h2>
             <h2>Height: {infoData?.height}</h2>
@@ -14,4 +12,3 @@ function PkmnInfo(props) {
   }
 export default PkmnInfo;
 
-//? if object undefined it won't throw error

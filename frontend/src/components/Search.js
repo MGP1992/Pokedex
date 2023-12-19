@@ -1,4 +1,3 @@
-import './searchstyle.css';
 import axios from 'axios';
 
 
@@ -14,10 +13,10 @@ function Search(props) {
       const genOneLocations = findVersionLocation(locCall.data);
       const genOneFlavourText = findVersionFlavourText(descriptionData.data)
       const mergedData = {...data, location_area_encounters: genOneLocations, pokemon_descriptions: genOneFlavourText};
-      pkmnData(mergedData); //assignment
+      pkmnData(mergedData); 
 
     }
-    //pass in the array
+
     const findVersionLocation = function(location_area_encounters) {
 
     }
@@ -33,15 +32,18 @@ function Search(props) {
 
     }
     return (
+      <div className='mt-72 ml-40'>
         <form id="searchbar" onSubmit={handleSubmit}>
           <input
             id="pkmnName"
             name="pkmnName"
             placeholder="search"
             type="search"
+            className="p-2 border border-gray-300 rounded-md focus:outline-none focus:border-red-500"
           />
-          <input type="submit" />
+          <input type="submit" className="ml-2 p-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:red-blue-600"/>
         </form>
+        </div>
     );
   }
   
