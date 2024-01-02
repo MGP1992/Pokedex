@@ -1,4 +1,5 @@
 
+
 function PkmnDescription({description, image}) {
 
   const processedDescription = (description) => description.replace(/[^a-zA-Z0-9,.' é É]/g, ' ')

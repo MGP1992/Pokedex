@@ -1,5 +1,6 @@
 import React from "react";
 
+
 function Typecheck(props) {
   const { type } = props;
 
