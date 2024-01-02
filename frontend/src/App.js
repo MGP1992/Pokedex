@@ -26,18 +26,20 @@ function App() { //sets up reactive variables with accessors
     setImage(data.sprites.front_default);
   }
   return (
-    <div id="content-container" className="relative">
+    <div id="content-container" className="relative flex">
+      <div id="search-and-entry" className="w-5/12 h-10">
       <Search pkmnData={pull_pkmnData} />
-      <div id="info-container" className="h-10 min-w-0 max-w-1330px">
         <PkmnInfo
           infoData={infoData}
         />
+      <Typecheck type={infoData?.type} />
+      </div>
+      <div id="sprite-and-description" className="relative">
         <PkmnDescription
           description={description}
           image={image}
         />
       </div>
-      <Typecheck type={infoData?.type} />
     </div>
   );
 }

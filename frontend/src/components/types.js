@@ -25,7 +25,7 @@ function Typecheck(props) {
   const { strongAgainst, weakAgainst } = typeMatchups[type] || typeMatchups.empty;
 
   return (
-    <div id="types" className="ml-14 mt-52 text-3xl">
+    <div id="types" className="ml-14 mt-20 text-2xl">
       <h1>Type Matchup</h1>
       <h2>Strong against: {strongAgainst.join(", ")}</h2>
       <h2>Weak against: {weakAgainst.join(", ")}</h2>
