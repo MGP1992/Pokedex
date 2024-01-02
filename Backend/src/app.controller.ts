@@ -1,9 +1,9 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { AppService } from './app.service';
 import { HttpService } from '@nestjs/axios';
-import { last, lastValueFrom } from 'rxjs';
+import { lastValueFrom } from 'rxjs';
 
-@Controller() // Define the routes realtive to app - controllers are how we define the API
+@Controller() 
 export class AppController {
   constructor(
     private readonly appService: AppService,
@@ -15,7 +15,7 @@ export class AppController {
     return this.appService.getHello();
   }
 
-  @Get('/pokemon/:name') // :name -> indicates a variable name
+  @Get('/pokemon/:name') 
   async getPokemonData(@Param('name') name: string): Promise<any> {
     const pokeData = await lastValueFrom(this.httpService.get(`https://pokeapi.co/api/v2/pokemon/${name}`));
 
@@ -28,6 +28,7 @@ export class AppController {
 
     return pokeData.data;
   }
+
 
 
 

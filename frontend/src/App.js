@@ -16,7 +16,7 @@ function App() { //sets up reactive variables with accessors
       type: data.types[0].type.name,
       height: data.height,
       weight: data.weight,
-      location: '', 
+      location: data.location_area_encounters ? data.location_area_encounters : 'Cannot catch in Red Version', 
       id: data.id,
     }
 

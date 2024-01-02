@@ -18,14 +18,20 @@ function Search(props) {
     }
 
     const findVersionLocation = function(location_area_encounters) {
-
-    }
+      for (const entry of location_area_encounters) {
+        for (const version of entry.version_details) {
+            if (version.version.name === "red") {
+              return(entry.location_area.name)
+          }
+        }
+  }
+}
 
     const findVersionFlavourText = function(pokemon_species_data) {
       for (const entry of pokemon_species_data.flavor_text_entries) {
 
         if (entry.version.name ==="red") {
-          return entry.flavor_text; // need to fix weird arrow problem (iterate through string etc)
+          return entry.flavor_text;
         }
 
       }
@@ -46,6 +52,8 @@ function Search(props) {
         </div>
     );
   }
+
+
   
   export default Search;
 

@@ -2,7 +2,7 @@
 
 function PkmnDescription({description, image}) {
 
-  const processedDescription = (description) => description.replace(/[^a-zA-Z0-9,.' é É]/g, ' ')
+  const processedDescription = (description) => description?.replace(/[^a-zA-Z0-9,.' é É]/g, ' ')
   
     return (
       <div id="pkmndescription" className="max-w-md -ml-64 mt-64">
