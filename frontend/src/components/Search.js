@@ -6,7 +6,7 @@ function Search(props) {
     const handleSubmit = async function(event) {
       event.preventDefault();
       const formData = new FormData(event.currentTarget);
-      const pkmnSearch = formData.get('pkmnName');
+      const pkmnSearch = formData.get('pkmnName').toLowerCase();
       const { data } = await axios.get(`http://localhost:3001/pokemon/${pkmnSearch}`);
       const locCall = await axios.get(data.location_area_encounters);
       const descriptionData = await axios.get(`http://localhost:3001/pokemon/${data.id}/description`);
@@ -24,16 +24,14 @@ function Search(props) {
               return(entry.location_area.name)
           }
         }
-  }
-}
+      }
+    }
 
     const findVersionFlavourText = function(pokemon_species_data) {
       for (const entry of pokemon_species_data.flavor_text_entries) {
-
         if (entry.version.name ==="red") {
           return entry.flavor_text;
         }
-
       }
 
     }

@@ -6,7 +6,7 @@ function PkmnDescription({description, image}) {
   
     return (
       <div id="pkmndescription" className="max-w-md -ml-64 mt-64">
-          <img className="w-60 h-60 ml-28" alt="pokemon sprite" src={image}/>
+          {image && <img className="w-60 h-60 ml-28" src={image}/>}
           <p className="mt-16 text-3xl">{processedDescription(description)}</p>
       </div>         
     );
