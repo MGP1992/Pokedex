@@ -1,13 +1,16 @@
 import { useState } from "react";
+import Switch from '@mui/material/Switch';
 import Search from "./components/Search";
 import PkmnInfo from "./components/info";
 import Typecheck from "./components/types";
 import PkmnDescription from "./components/description";
 
-function App() { //sets up reactive variables with accessors
+function App() {
   const [infoData, setInfoData] = useState();
   const [description, setDescription] = useState();
   const [image, setImage] = useState();
+  const [shinyImage, setShinyImage] = useState();
+  const [isShiny, setIsShiny] = useState(false);
 
   const pull_pkmnData = (data) => {
     console.log(data);
@@ -24,23 +27,27 @@ function App() { //sets up reactive variables with accessors
     setInfoData(temp_data);
     setDescription(data.pokemon_descriptions);
     setImage(data.sprites.front_default);
+    setShinyImage(data.sprites.front_shiny);
   }
+
   return (
+    <>
     <div id="content-container" className="relative flex">
-      <div id="search-and-entry" className="w-5/12 h-10">
-      <Search pkmnData={pull_pkmnData} />
-        <PkmnInfo
-          infoData={infoData}
-        />
+      <div id="search-and-entry" className="w-5/12 flex flex-col">
+      
+      <Search  pkmnData={pull_pkmnData} />
+      <PkmnInfo infoData={infoData} />
       <Typecheck type={infoData?.type} />
+      {image && <button className=" ml-72 mt-14 w-16 text-xl p-2 bg-red-500 text-white rounded-md hover:bg-red-600 focus:outline-none focus:red-blue-600" onClick={()=>setIsShiny(!isShiny)}>Shiny</button>}
       </div>
       <div id="sprite-and-description" className="relative">
         <PkmnDescription
           description={description}
-          image={image}
+          image={!isShiny?image:shinyImage}
         />
       </div>
     </div>
+    </>
   );
 }
 
